@@ -12,6 +12,8 @@ public class Order {
 	
 	private Date fechaOrder;
 	
+	private String rqUID;
+	
 	private double total;
 	
 	private List<Producto> productos=new ArrayList<Producto>();
@@ -78,6 +80,16 @@ public class Order {
 	public void setProductos(List<Producto> productos) {
 		this.productos = productos;
 	}
+
+	public String getRqUID() {
+		return rqUID;
+	}
+
+	public void setRqUID(String rqUID) {
+		this.rqUID = rqUID;
+	}
+	
+	
 	
 	
 	
