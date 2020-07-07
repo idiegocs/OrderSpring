@@ -1,0 +1,20 @@
+
+FROM openjdk:8-jdk-alpine
+ARG JAR_FILE=target/*.jar
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
+
+# docker build -t idiegocs/sv-order .
+# docker run --name order_sv -p 8585:8585 idiegocs/sv-order
+# docker login -u "idiegocs" -p "mypassword" docker.io
+# docker push idiegocs/sv-order 
+# docker pull idiegocs/sv-order
+
+
+# docker-compose -v
+# docker-compose up -d
+# docker-compose ps
+# docker-compose logs
+# docker-compose stop
+# docker-compose rm
+# docker-compose logs app_order

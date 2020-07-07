@@ -1,0 +1,31 @@
+version: '3.1'
+services:
+  app_order:
+    image: idiegocs/sv-order
+    ports:
+      - "8586:8585"
+    depends_on:
+      - dbpostgresql
+      - mqActive
+      
+  app_invent:
+    image: idiegocs/sv-order
+    ports:
+      - "8587:8585"
+    depends_on:
+      - dbpostgresql
+      - mqActive
+  mqActive:
+    image: rmohr/activemq
+    ports:
+      - "61616:61616"
+      - "8161:8161"
+  
+  dbpostgresql:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=mydb
