@@ -4,14 +4,24 @@ services:
     image: idiegocs/sv-order
     ports:
       - "8586:8585"
+    
+    environment:
+      - BROKER_URL=tcp://mqActive:61616
+      - JMS_DESTINO=order.document.in
+      
     depends_on:
       - dbpostgresql
       - mqActive
       
   app_invent:
-    image: idiegocs/sv-order
+    image: idiegocs/sv-inventory
     ports:
-      - "8587:8585"
+      - "8587:8584"
+      
+    environment:
+      - BROKER_URL=tcp://mqActive:61616
+      - JMS_DESTINO=order.document.in
+      
     depends_on:
       - dbpostgresql
       - mqActive

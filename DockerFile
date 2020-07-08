@@ -7,7 +7,8 @@ ENTRYPOINT ["java","-jar","/app.jar"]
 # docker build -t idiegocs/sv-order .
 # docker run --name order_sv -p 8585:8585 idiegocs/sv-order
 # docker login -u "idiegocs" -p "mypassword" docker.io
-# docker push idiegocs/sv-order 
+# docker push idiegocs/sv-order
+# docker push idiegocs/sv-order:tagname
 # docker pull idiegocs/sv-order
 
 
